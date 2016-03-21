@@ -29,3 +29,10 @@ export const showAllCards = (cards) => {
 		cards
 	}
 }
+
+export const toggleReveal = (card) => {
+	return {
+		type: 'TOGGLE_REVEAL',
+		card
+	}
+}

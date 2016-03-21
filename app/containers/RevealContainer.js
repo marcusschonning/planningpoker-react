@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import { revealToggle } from '../actions';
+import { toggleReveal } from '../actions';
 import Card from '../components/Card'
 
 const mapStateToProps = (state) => {
 	return {
-		//cards: state.planningpoker
+		// state: state
 
 	}
 }

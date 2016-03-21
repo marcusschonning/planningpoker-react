@@ -4,16 +4,29 @@ const card = (state, action) => {
 			return {
 				value: state,
 				show: true,
+				choosen: false
 			}
 		case 'CHOOSE_CARD':
 			if(state.value === action.card) {
-				console.log('state', state, 'action', action)
 				return Object.assign({}, state, {
-					show: false
+					show: false,
+					choosen: true
 				});
 			}else {
 				return Object.assign({}, state, {
-					show: true
+					show: true,
+					choosen: false
+				});
+			}
+		case 'TOGGLE_REVEAL':
+			if(state.value === action.card) {
+				return Object.assign({}, state, {
+					show: !state.show,
+				});
+			}else {
+				return Object.assign({}, state, {
+					show: true,
+					choosen: false
 				});
 			}
 		default:
@@ -28,10 +41,10 @@ const planningpoker = (state = [], action) => {
 				return card(c, action);
 			});
 		case 'TOGGLE_REVEAL':
-			console.log('action', action);
-			return state;
+			return state.map(c => {
+				return card(c, action)
+			});
 		case 'CHOOSE_CARD':
-			console.log('action', action, 'state', state);
 			return state.map(c => {
 				return card(c, action);
 			})

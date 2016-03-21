@@ -1,16 +1,23 @@
 import React from 'react';
+import { Link } from 'react-router';
 import RevealContainer from '../containers/RevealContainer';
-//import RevealPageContainer from '../containers/RevealPageContainer';
+require('../styles/reveal.scss');
 
-class RevealCard extends React.Component {
-    render({ cards }) {
-        return(
-	        <div>
-	        	<h1>RevealContainer</h1>
-				<RevealPageContainer />
-	        </div>
-        )
-    }
+const RevealCard = ({card}) => {
+	if (!card) {
+		return (
+			<div className='revealContainer'>
+				<Link to='/'>Choose a card</Link>
+			</div>
+		)
+	}
+	return(
+	    <div className='revealContainer'>
+	    	<Link to='/'>Choose again</Link>
+			<RevealContainer show={card.show} key={card.value} value={card.value} />
+	    </div>
+	)
 }
+
 
 export default RevealCard;
