@@ -10,6 +10,7 @@
 	cursor: pointer;
 	::selection { background: transparent; }
 	::-moz-selection { background: transparent; }
+	transition: all 100ms ease-in-out;
 	h3{
 		position: absolute;
 		display: block;
@@ -19,7 +20,7 @@
 		top: 50%;
 		transform: translate(-50%, -50%);
 		color: #c0392b;
-		font-size: 3em;
+		font-size: 4em;
 	}
 	a{
 		display: block;
@@ -31,8 +32,25 @@
 		background: #7f8c8d;
 		h3{
 			font-size: 1.5em;
-			color: #eee;
+			color: lighten(#7f8c8d, 15%);
 
 		}
+		&:after{
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background: transparent;
+			border: 2px dashed #999;
+			width: 270px;
+			height: 370px;
+
+			border-radius: 10px;
+			content: '';
+		}
+	}
+	&:hover{
+		box-shadow: 3px 3px 20px 2px black;
+		transform: scale(1.005);
 	}
 }

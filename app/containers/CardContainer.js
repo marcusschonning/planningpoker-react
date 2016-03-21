@@ -19,10 +19,6 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 class CardType extends React.Component {
-	componentWillMount() {
-		console.log('card will mount');
-	}
-
     render() {
         return <Card {...this.props} />;
     }

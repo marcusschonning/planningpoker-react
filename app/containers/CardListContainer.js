@@ -21,7 +21,6 @@ const mapDispatchToProps = (dispatch) => {
 class CardListFetcher extends React.Component {
     componentWillMount(dispatch) {
     	this.props.setCards([1, 2, 3, 5, '8+']);
-    	console.log('willmount');
     }
 
     render() {

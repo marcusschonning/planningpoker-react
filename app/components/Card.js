@@ -1,7 +1,5 @@
 import React from 'react';
 require('../styles/card.scss');
-
-//import possible containers
 const Card = ({value, onCardClick, show}) => {
 	var hideCard = '';
 	var text = '';
